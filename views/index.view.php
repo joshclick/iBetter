@@ -1,5 +1,5 @@
 <h1>The Wall of Bets</h1>
-<a href="/admin/index.php"> Make a Bet </a>
+<a href="/ibetter/admin/index.php"> Make a Bet </a>
 
 
 <?php foreach($bets as $bet) : ?>

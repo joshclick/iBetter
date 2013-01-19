@@ -6,7 +6,7 @@
 	<title> IBetter </title> 
 	<!-- <link rel="icon" type="image/png" href="Images/favicon.ico" />  LINK FOR THE FAVICON-->
     	<!-- <link rel="shortcut icon" href="Images/favicon.ico" /> Short Cut Icon-->
-    	<link href="style.css" rel="stylesheet" type="text/css"> <!-- Style Sheet I haven't create yet-->
+    	<link href="style.css" rel="stylesheet" type="text/css"> <!-- Style Sheet I havent create yet-->
 
 </head> 
 <body>

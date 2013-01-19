@@ -39,7 +39,7 @@
        </article>
 	<?php endforeach ?>
 	
-	<!-- Hello-->
+	
 	
 </div> <!-- End of Containter ID -->	
 </div> <!-- Main Page ID -->

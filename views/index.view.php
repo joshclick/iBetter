@@ -33,14 +33,13 @@
        	<article class = "boxes">
         	<h2><?= $bet['title']; ?></h2>
             <div class="bet-body">
-            	A bet between: <?= $bet['name1']; ?> and <?= $bet['name1']; ?> for $<?= $bet['amount']; ?> 
+            	<?= $bet['team1']; ?> vs. <?= $bet['team2']; ?>: <?= $bet['name1']; ?> and <?= $bet['name2']; ?> for $<?= $bet['amount']; ?>
                 <a href="single.php?id=<?= $bet['id']; ?>"> Edit </a>
             </div>
        </article>
 	<?php endforeach ?>
 	
-</div> <!-- End of Containter ID -->	
+</div> <!-- End of Containter  -->	
 </div> <!-- Main Page ID -- >
 </body>
 </html>
-

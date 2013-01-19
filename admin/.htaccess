@@ -1,0 +1,4 @@
+AuthName "Administrators Only"
+AuthType Basic
+AuthUserFile /Users/Josh/.htpasswd
+require valid-user

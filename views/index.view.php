@@ -1,14 +1,15 @@
-<h1>The Blog</h1>
+<h1>The Wall of Bets</h1>
+<a href="/admin/index.php"> Make a Bet </a>
+
 
 <?php foreach($bets as $bet) : ?>
 	<article>
 		<h2>
-			<a href="single.php?id=<?= $bet['id']; ?>">
-				<?= $bet['title']; ?>
-			</a>
+			<?= $bet['title']; ?>
 		</h2>
 		<div class="body">
-			<?= $bet['body']; ?>
+			A bet between: <?= $bet['name1']; ?> and <?= $bet['name1']; ?> for $<?= $bet['amount']; ?> 
+			<a href="single.php?id=<?= $bet['id']; ?>"> Edit </a>
 		</div>
 	</article>
 <?php endforeach ?>

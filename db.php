@@ -41,7 +41,7 @@ function get( $tableName, $conn, $limit = 10)
 function get_by_id($id,$conn)
 {
 	$query = query(
-		'SELECT * FROM posts WHERE id = :id LIMIT 1',
+		'SELECT * FROM bets WHERE id = :id LIMIT 1',
 		array('id' => $id),
 		$conn
 	);

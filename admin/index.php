@@ -13,7 +13,7 @@ if ( $_SERVER['REQUEST_METHOD']=='POST') {
 		$data['status'] = "Please fill out the form completely.";
 	} else {
 		iBetter\DB\query(
-			"INSERT INTO posts(title,name1,name2,amount) VALUES(:title,:name1,:name2,:amount)",
+			"INSERT INTO bets(title,name1,name2,amount) VALUES(:title,:name1,:name2,:amount)",
 			array('title' => $title, 'name1' => $name1, 'name2' => $name2, 'amount' => $amount),
 			$conn);
 

@@ -6,8 +6,16 @@
 			<input type="text" name="title" id="title">
 		</li>
 		<li>
-			<label for="body">Body:</label>
-			<textarea name="body" id="body"></textarea>
+			<label for="name1">Person 1:</label>
+			<input type="text" name="name1" id="name1">
+		</li>
+		<li>
+			<label for="name2">Person 2:</label>
+			<input type="text" name="name2" id="name2">
+		</li>
+		<li>
+			<label for="amount">Amount ($$):</label>
+			<input type="text" name="amount" id="amount">
 		</li>
 		<li>
 			<input type="submit" value="Create Post">

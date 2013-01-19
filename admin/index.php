@@ -4,17 +4,18 @@ require '../bets.php';
 $data = array();
 
 if ( $_SERVER['REQUEST_METHOD']=='POST') {
-	$title = $_POST['title'];
 	$name1 = $_POST['name1'];
-	$name2 = $_POST['name2'];
+	$name2 = $_POST['name2'];	
+	$team1 = $_POST['team1'];
+	$team2 = $_POST['team2'];
 	$amount = $_POST['amount'];
 
-	if ( empty($title) || empty($name1) || empty($name2) || empty($amount) ) {
+	if ( empty($name1) || empty($name2) || empty($team1) || empty($team2) || empty($amount) ) {
 		$data['status'] = "Please fill out the form completely.";
 	} else {
 		iBetter\DB\query(
-			"INSERT INTO bets(title,name1,name2,amount) VALUES(:title,:name1,:name2,:amount)",
-			array('title' => $title, 'name1' => $name1, 'name2' => $name2, 'amount' => $amount),
+			"INSERT INTO bets(name1,name2,team1,team2,amount) VALUES(:name1,:name2,:team1,:team2,:amount)",
+			array( 'name1' => $name1, 'name2' => $name2, 'team1' => $team1, 'team2' => $team2, 'amount' => $amount),
 			$conn);
 
 		$data['status'] = 'Your bet has been placed!';

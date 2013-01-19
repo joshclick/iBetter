@@ -1,6 +1,6 @@
 <?php
 
-require 'bets.php';
+require 'bet.php';
 use iBetter\DB;
 
 $bets = DB\get('bets',$conn);

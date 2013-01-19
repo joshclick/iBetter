@@ -48,3 +48,5 @@ $teams = array(
 	<?php endif ?>
 
 </form>
+
+<a href="../index.php">Go Back!</a>

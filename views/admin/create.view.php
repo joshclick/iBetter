@@ -1,9 +1,37 @@
 <?php
 $teams = array(
-	'ne'		=> 'New England',
-	'po'		=> 'Poop',
-	'da'		=> 'Da Bomb'
-	);
+      'buf'                => 'Buffalo Bills',
+      'nyj'                                => 'New York Jets',
+      'ne'                                        => 'New England Patriots',
+      'mia'                                => 'Miami Dolphins',
+      'dal'                                => 'Dallas Cowboys',
+      'wsh'                                => 'Washington Redskins',
+      'nyg'                                => 'New York Giants',
+      'phi'                                => 'Philadelphia Eagles',
+      'den'                                => 'Denver Broncos',
+      'kc'                                        => 'Kansas City Chiefs',
+      'oak'                                => 'Oakland Raiders',
+      'sd'                                        => 'San Diego Chargers',
+      'ari'                                => 'Arizona Cardinals',
+      'sf'                                        => 'San Francisco 49ers',
+      'sea'                                => 'Seattle Seahawks',
+      'stl'                                => 'Saint Louis Rams',
+      'cin'                                => 'Cincinnati Bengals ',
+      'pit'                                => 'Pittsburgh Steelers',
+      'cle'                                => 'Cleveland Browns',
+      'bal'                                => 'Baltimore Ravens',
+      'chi'                                => 'Chicago Bears',
+      'det'                                => 'Detroit Lions',
+      'gb'                                        => 'Green Bay Packers',
+      'min'                                => 'Minnesota Vikings',
+      'hou'                                => 'Houston Texans',
+      'ind'                                => 'Indianapolis Colts',
+      'jac'                                => 'Jacksonville Jaguars',
+      'ten'                                => 'Tennessee Titans',
+      'atl'                                => 'Atlanta Falcons',
+      'no'                                        => 'New Orleans Saints',
+      'car'                                => 'Carolina Panthers',
+      'tb'                                        => 'Tampa Bay Buccaneers');
 ?>
 
 <h1>Create a New Post</h1>
@@ -20,10 +48,9 @@ $teams = array(
 		<li>
 			<label for="team1">Person 1's Team:</label>
 			<select name="team1">
-			  <option value="volvo">Volvo</option>
-			  <option value="saab">Saab</option>
-			  <option value="mercedes">Mercedes</option>
-			  <option value="audi">Audi</option>
+				<?php foreach($teams as $team => $teamName) : ?>
+       			<option value = "<?=$team?>"><?=$teamName?></option>
+				<?php endforeach ?>
 			</select>
 		</li>
 		<li>

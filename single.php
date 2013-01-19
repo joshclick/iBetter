@@ -1,15 +1,15 @@
 <?php
 
-require 'blog.php';
+require 'bet.php';
 use iBetter\DB;
 
-$post = DB\get_by_id($_GET['id'],$conn);
+$bet = DB\get_by_id($_GET['id'],$conn);
 
-if ( $post ) {
-	$post = $post[0];
+if ( $bet ) {
+	$bet = $bet[0];
 
 	view('single', array (
-		'post' => $post)
+		'bet' => $bet)
 	);
 } else {
 	header("Location: index.php");

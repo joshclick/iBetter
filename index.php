@@ -3,8 +3,8 @@
 require 'bets.php';
 use iBetter\DB;
 
-$posts = DB\get('bets',$conn);
+$bets = DB\get('bets',$conn);
 
 view('index', array (
-	'bets' => $posts)
+	'bets' => $bets)
 );

@@ -1,6 +1,6 @@
 /* HTML */
 a{
-  color: #964B4B; /*Reddish*/
+  	color: #964B4B; /*Reddish*/
 	text-decoration: none;
 	font-weight: 300;
 	margin-left:2.5em;
@@ -38,8 +38,8 @@ span{
 
 nav{
 	font-size:.95em;
-	padding-left: 10em;
-	padding-right: 10em;
+	padding-left: 20em;
+	padding-right: 20em;
 	position: absolute;
 }
 
@@ -61,10 +61,16 @@ nav{
 	margin-right:auto;
 	padding-top: 5em;
 	padding-bottom: 5em;
-	width:90%;
+	width:918px;
 }
 
 /*Class*/
+
+article.boxes{
+
+}
+
+
 div.nav_text{
 	border: solid; 
 	border-radius: 10px;
@@ -86,6 +92,7 @@ div.bet_body{
 	background-color:#964B4B;
 	border-color: #964B4B;
 	color: #eeeeee;
+	display: block;
 	font-family:  "League Gothic","HelveticaNeue-Light", "Helvetica", "sans-serif";
 	font-size: 2.25em;
 	padding-top: 1em;

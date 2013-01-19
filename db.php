@@ -25,7 +25,7 @@ function query( $query, $bindings, $conn ) {
 	return ($stmt->rowCount()>0) ? $stmt : false;
 }
 
-function get( $tableName, $conn, $limit = 10)
+function get( $tableName, $conn, $limit = 5)
 {
 	try {
 		$result =  $conn->query( "SELECT * FROM $tableName ORDER BY id DESC LIMIT $limit" );

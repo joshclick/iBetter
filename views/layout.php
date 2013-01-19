@@ -9,15 +9,6 @@
 		<?php include($path); ?>
 	</div>
 
-	<script src="http://localhost/~josh/ibetter/js/jquery-1.9.0.min.js"></script>
-	<script src="http://localhost/~josh/ibetter/js/jquery.masonry.min.js"></script>
-	<script>
-	  	$(function(){
-		    $('.container').masonry({
-	  			itemSelector: '.bet_body',
-			});
-	  	});
-	</script>
 </body>
 </html>
 

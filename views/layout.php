@@ -5,7 +5,7 @@
 	<link href="http://localhost/~josh/ibetter/views/style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="bg">
-	<div class="container">
+	<div class="container" id="container">
 		<?php include($path); ?>
 	</div>
 

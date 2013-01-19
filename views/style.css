@@ -139,26 +139,14 @@ div.bet_body{
 div.team{
 	color: #eeeeee;
 	display: inline;
-	font-size: 1em; 
+	font-size: 18px; 
 	
 }
 
 div.name{
 	color: #eeeeee;
 	display: inline;
-	font-size: 1em;
-}
-
-div.L_pic{
-	float: left; 
-	display: inline;
-	padding-left: .75em;
-}
-
-div.R_pic{
-	float: right; 
-	display: inline;
-	padding-right: .75em;
+	font-size: 18px;
 }
 
 /* Add Font-Face*/

@@ -51,7 +51,7 @@ nav{
 	margin-right: auto;
 }
 
-#container{
+.container{
 	background-color: #333333; /*Gray*/
 	font-family: "HelveticaNeue-Light", "Helvetica", "sans-serif";
 	font-size:.85em;
@@ -61,7 +61,7 @@ nav{
 	margin-right:auto;
 	padding-top: 5em;
 	padding-bottom: 5em;
-	width:60em;
+	width:90%;
 }
 
 /*Class*/
@@ -95,6 +95,7 @@ div.bet_body{
 	text-align: center; 
 	width: 15em;
 	height: 5em;
+	margin: 5px;
 }
 
 div.team{

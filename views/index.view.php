@@ -5,8 +5,8 @@
 	<meta name = "charset" content ="UTF-8">
 	<title> IBetter </title> 
 	<!-- <link rel="icon" type="image/png" href="Images/favicon.ico" />  LINK FOR THE FAVICON-->
-    	<!-- <link rel="shortcut icon" href="Images/favicon.ico" /> Short Cut Icon-->
-    	<link href="style.css" rel="stylesheet" type="text/css"> <!-- Style Sheet I havent create yet-->
+    <!-- <link rel="shortcut icon" href="Images/favicon.ico" /> Short Cut Icon-->
+    <link href="style.css" rel="stylesheet" type="text/css"> <!-- Style Sheet I havent create yet-->
 
 </head> 
 <body>
@@ -20,8 +20,8 @@
 	<nav>
 		<ul>
 		<li><a href="index.html"> <img class = "noborder" src="Images/home.gif" alt="Home" width="115" height="50"></a></li>
-        	<li><a href="bet.html"><img class = "noborder" src="Images/tracks.gif" alt="Tracks" width="115" height="50"></a></li>
-        	<li><a href="about.html"> <img class = "noborder" src="Images/about.gif" alt="About" width="115" height="50"></a></li>
+        <li><a href="bet.html"><img class = "noborder" src="Images/tracks.gif" alt="Tracks" width="115" height="50"></a></li>
+        <li><a href="about.html"> <img class = "noborder" src="Images/about.gif" alt="About" width="115" height="50"></a></li>
 		</ul>
 	</nav>
 	
@@ -39,9 +39,11 @@
        </article>
 	<?php endforeach ?>
 	
-
+	<!-- Hello-->
+	
 </div> <!-- End of Containter ID -->	
 </div> <!-- Main Page ID -->
 </body>
 </html>
+
 

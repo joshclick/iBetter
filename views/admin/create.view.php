@@ -3,19 +3,19 @@
 	<ul>
 		<li>
 			<label for="title">Title:</label>
-			<input type="text" name="title" id="title">
+			<input type="text" name="title" id="title" maxlength="50">
 		</li>
 		<li>
 			<label for="name1">Person 1:</label>
-			<input type="text" name="name1" id="name1">
+			<input type="text" name="name1" id="name1" maxlength="20">
 		</li>
 		<li>
 			<label for="name2">Person 2:</label>
-			<input type="text" name="name2" id="name2">
+			<input type="text" name="name2" id="name2" maxlength="20">
 		</li>
 		<li>
 			<label for="amount">Amount ($$):</label>
-			<input type="text" name="amount" id="amount">
+			<input type="text" name="amount" id="amount" maxlength="5">
 		</li>
 		<li>
 			<input type="submit" value="Create Post">

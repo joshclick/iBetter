@@ -1,7 +1,7 @@
 <?php
 
 require 'blog.php';
-use Blog\DB;
+use iBetter\DB;
 
 $post = DB\get_by_id($_GET['id'],$conn);
 

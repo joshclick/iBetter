@@ -1,4 +1,4 @@
-<?php namespace Blog\DB;
+<?php namespace iBetter\DB;
 
 require 'config.php';
 

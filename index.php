@@ -1,10 +1,10 @@
 <?php
 
-require 'blog.php';
-use Blog\DB;
+require 'bets.php';
+use iBetter\DB;
 
-$posts = DB\get('posts',$conn);
+$posts = DB\get('bets',$conn);
 
 view('index', array (
-	'posts' => $posts)
+	'bets' => $posts)
 );

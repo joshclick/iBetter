@@ -1,6 +1,6 @@
 <?php 
 
-require '../blog.php';
+require '../bets.php';
 $data = array();
 
 if ( $_SERVER['REQUEST_METHOD']=='POST') {

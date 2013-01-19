@@ -5,8 +5,8 @@
 	<meta name = "charset" content ="UTF-8">
 	<title> IBetter </title> 
 	<!-- <link rel="icon" type="image/png" href="Images/favicon.ico" />  LINK FOR THE FAVICON-->
-    <!-- <link rel="shortcut icon" href="Images/favicon.ico" /> Short Cut Icon-->
-    <link href="style.css" rel="stylesheet" type="text/css"> <!-- Style Sheet I havent create yet-->
+    <!-- <link rel="shortcut icon" href="Images/favicon.ico" /> Short Cut Icon -->
+    <link href="style.css" rel="stylesheet" type="text/css"> <!-- Style Sheet I haven't create yet -->
 
 </head> 
 <body>
@@ -19,15 +19,15 @@
 	<!--Navigation--> 
 	<nav>
 		<ul>
-		<li><a href="index.html"> <img class = "noborder" src="Images/home.gif" alt="Home" width="115" height="50"></a></li>
-        <li><a href="bet.html"><img class = "noborder" src="Images/tracks.gif" alt="Tracks" width="115" height="50"></a></li>
-        <li><a href="about.html"> <img class = "noborder" src="Images/about.gif" alt="About" width="115" height="50"></a></li>
-		</ul>
+		<li><a href="index.wave.html"><div class = nav_text> HOME </div></a></li>
+		<li><a href="bet.html"><div class = nav_text> BET </div></a></li>
+		<li><a href="about.html"><div class = nav_text> ABOUT </div></a></li>	
+	</ul>
 	</nav>
 	
 	<!--Scrolling-->
 	<h1>The Wall of Bets</h1>
-		<a href="/ibetter/admin/index.php"> Make a Bet </a>
+		<a href="/admin/"> Make a Bet </a>
 		<!-- PHP -->
 		<?php foreach($bets as $bet) : ?>
        	<article class = "boxes">
@@ -39,11 +39,8 @@
        </article>
 	<?php endforeach ?>
 	
-	
-	
 </div> <!-- End of Containter ID -->	
-</div> <!-- Main Page ID -->
+</div> <!-- Main Page ID -- >
 </body>
 </html>
-
 

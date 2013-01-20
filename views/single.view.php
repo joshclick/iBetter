@@ -36,7 +36,7 @@ $teams = array(
 
 
 
-    <div class="bet_body" style="cursor: pointer;" onclick='window.location="single.php?id=<?= $bet['id']; ?>";'>
+    <div class="bet_body" style="cursor: pointer;" onclick='window.location="<?= $bet['payLink'] ?>";'>
 <!--         	<div class = "L_pic"> <img class = "noborder" src="Images/home.gif" alt="Picture" width="100" height="150"> </div>
  -->        	<div id = "cash">$<?= $bet['amount'];?></div>
 <!--         	<div class = "R_pic"> <img class = "noborder" src="Images/home.gif" alt="Picture" width="100" height="150"> </div>
@@ -50,7 +50,7 @@ $teams = array(
 	function makeFrame(){	
 var para= document.createElement("iframe");
 para.src="<?=$bet['boxLink']?>";
-   		para.style.width = 640+"px"; 
+   		para.style.width = 918+"px"; 
    		para.style.height = 480+"px"; 
 para.sandbox = "allow-top-navigation";
 var element = document.getElementById("bet_body");

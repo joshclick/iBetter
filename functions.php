@@ -11,8 +11,8 @@ function view($path, $data = null)
 }
 
 function check_win($bet) {
-	$team1 = $bet['team1'];
-	$team2 = $bet['team2'];
+	$team1 = $bet->team1;
+	$team2 = $bet->team2;
 	$file = file_get_contents("http://espn.go.com/nfl/team/_/name/" . $team1 );
 	$array = explode('<li class="team-name', $file);
 	for($i=1; $i<18; $i++)

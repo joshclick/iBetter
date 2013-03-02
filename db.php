@@ -1,52 +1,46 @@
 <?php namespace iBetter\DB;
 
 require 'config.php';
-
+$conn;
 function connect( $config ) {
 	//return pdo connection
 	try {
-		$conn = new \PDO( 'mysql:host=localhost;dbname=' . $config['DB_DB'],
-			$config['DB_USERNAME'],
-			$config['DB_PASSWORD']
-		);
-
-		$conn->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
-
+		$conn = mysql_connect("localhost",$config['DB_USERNAME'],$config['DB_PASSWORD']) or die("no way jose");
+	    mysql_select_db($config['DB_DB'], $conn);
 		return $conn;
 
-	} catch( Exception $e ) {
+	} catch(Exception $e) {
 		return false;
 	}
 }
 
-function query( $query, $bindings, $conn ) {
-	$stmt = $conn->prepare( $query );
+function query1( $query, $conn ) {
+     $result=mysql_query($query, $conn) or die ("Having error in execution 1 ==".mysql_error());
+	return $result;
+	/*$stmt = $conn->prepare( $query );
 	$stmt->execute($bindings);
-	return ($stmt->rowCount()>0) ? $stmt : false;
+	return ($stmt->rowCount()>0) ? $stmt : false;*/
 }
 
-function get( $tableName, $conn, $limit = 5)
+function get( $tableName, $conn, $limit=5)
 {
 	try {
-		$result =  $conn->query( "SELECT * FROM $tableName ORDER BY id DESC LIMIT $limit" );
-
-		return ( $result->rowCount() > 0 )
-			? $result
-			: false;
+		$result = query1("SELECT * FROM $tableName ORDER BY id DESC LIMIT $limit", $conn);
+          if($result === FALSE)
+      				return FALSE;
+      	   return $result;
+		//return ( $result->rowCount() > 0 ) ? $result : false;
 	} catch( Exception $e ) {
-		return false;
+		return $e;
 	}
 }
 
 function get_by_id($id,$conn)
 {
-	$query = query(
-		'SELECT * FROM bets WHERE id = :id LIMIT 1',
-		array('id' => $id),
-		$conn
-	);
-
+	$query = query1(
+		"SELECT * FROM bets WHERE id= '$id' Limit 1 ",
+		$conn);
 	if ( $query ) {
-		return $query -> fetchAll();
+	return mysql_fetch_array($query);
 	} 
 }

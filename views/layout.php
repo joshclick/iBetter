@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>iBetter</title>
-	<link href="http://localhost/~josh/ibetter/views/style.css" rel="stylesheet" type="text/css">
+	<link href="http://localhost/~rocketshot6/iBetter/style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="bg">
 	<div class="container" id="container">

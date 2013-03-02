@@ -1,35 +1,20 @@
- <link rel="stylesheet" href="../style.css" type="text/css">
- <?php
- 
-require 'config.php';
-
-use iBetter\DB;
+<link rel="stylesheet" href="../style.css" type="text/css">
+<?php
+require 'sendgrid-php/SendGrid_loader.php';
+$sendgrid = new SendGrid('pennApps', 'hackathon2013');
 
 
-$conn = mysql_connect("localhost",$config['DB_USERNAME'],$config['DB_PASSWORD']) or die("no way jose");
-	    mysql_select_db($config['DB_DB'], $conn);
-	    
-function query1( $query, $conn ) 
-{
-     $result=mysql_query($query, $conn) or die ("Having error in execution 1 ==".mysql_error());
-	return $result;
-	/*$stmt = $conn->prepare( $query );
-	$stmt->execute($bindings);
-	return ($stmt->rowCount()>0) ? $stmt : false;*/
+if (isset($_POST) && isset($_POST['name1'])) {
+  $url = $_POST['url'];
+  $mail = new SendGrid\Mail();
+   $mail->addTo('ben.wagle@yahoo.com')->
+          addTo('rocketshot6@yahoo.com')->
+       setFrom('iBetter-Pools@venmo.com')->
+       setSubject('Finalize your bet by posting the money!')->
+       setHtml("<a href=$url>$url</a>");
+	$sendgrid->web->send($mail);
 }
-
-function get_by_id($id,$conn)
-{
-	$query = query1(
-		"SELECT * FROM bets WHERE id='$id' Limit 1 ",
-		$conn);
-	if ( $query ) {
-	return mysql_fetch_array($query);
-	} 
-}
-
-$bet = get_by_id($_GET["id"],$conn);
-
+	
 $teams = array(
       'buf'                => 'Buffalo Bills',
       'nyj'                                => 'New York Jets',
@@ -65,30 +50,58 @@ $teams = array(
       'tb'                                        => 'Tampa Bay Buccaneers');
 ?>
 
+<h1>Start A New Bet</h1>
+<form action="" method="post">
+	<ul>
+		<li>
+			<label for="name1">Person 1:</label>
+			<input type="text" name="name1" id="name1" maxlength="20">
+		</li>
+		<li>
+			<label for="name2">Person 2:</label>
+			<input type="text" name="name2" id="name2" maxlength="20">
+		</li>
+		<li>
+			<label for="team1">Person 1's Team:</label>
+			<select name="team1">
+				<?php foreach($teams as $team => $teamName) : ?>
+       			<option value = "<?=$team?>"><?=$teamName?></option>
+				<?php endforeach ?>
+			</select>
+		</li>
+		<li>
+			<label for="team2">Person 2's Team:</label>
+			<select name="team2">
+				<?php foreach($teams as $team => $teamName) : ?>
+       			<option value = "<?=$team?>"><?=$teamName?></option>
+				<?php endforeach ?>
+			</select>
+		</li>
+		<li>
+			<label for="amount">Amount ($$):</label>
+			<input type="text" name="amount" id="amount" maxlength="5">
+		</li>
+		<li>
+		    <input type="hidden" name="url" id="url" value="" />
+			<input type="submit" value="Create Post" onclick="updateUrl()">
+		</li>
+	</ul>
 
-
-    <div class="bet_body" style="cursor: pointer;" onclick='window.location="<?= $bet[paylink]?>";'>
-<!--         	<div class = "L_pic"> <img class = "noborder" src="Images/home.gif" alt="Picture" width="100" height="150"> </div>
- -->        	<div id = "cash">$<?= $bet[amount] ?></div>
-<!--         	<div class = "R_pic"> <img class = "noborder" src="Images/home.gif" alt="Picture" width="100" height="150"> </div>
- -->        <br /> <div class= "team"><?= $teams[$bet[team1]] ?> </div> <span >vs.</span> <div class="team"><?= $teams[$bet[team2]] ?> </div>
-            <br /> <div class= "name"><?= $bet[name1] ?></div> <span>vs.</span><div class="name"><?= $bet[name2]?></div>
- </div>           
-
+	<?php if ( isset($status) ) : ?>
+	<p><?= $status ?></p>
 	
-	<div id="bet_body"></div>
-<button onclick="makeFrame()">Follow Bet</button>
-    <script>
-	function makeFrame(){	
-var para= document.createElement("iframe");
-para.src="<?= $bet[boxLink] ?>";
-   		para.style.width = 915+"px"; 
-   		para.style.height = 500+"px"; 
-para.sandbox = "allow-top-navigation";
-var element = document.getElementById("bet_body");
-element.appendChild(para);
+	<?php endif ?>
+	
+	<script>
+	
+	function updateUrl() {
+    	var payment= document.getElementById("amount").value;
+	    var poolLink= "https://venmo.com?txn=Pay&recipients=iBetter-Pools&amount="+payment+"&note=put%20up%20the%20money"
+	    document.getElementById("url").value = poolLink;
 	}
+
 	</script>
 
+</form>
 
-<a href="index.php">Back</a> 
+<a href="index.php">Go Back!</a>
